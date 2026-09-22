@@ -15,8 +15,6 @@ guessCount=0
 correct=False
 #--Clear-Screen--#
 os.system("clear")
-#--Print-Rules--#
-print("0=Not Used, 2=Wrong Place, 1=Correct Place")
 #--Pick-A-Word--#
 pWords=["green","books","orbit","maple","bacon","maths","angle"]
 word=random.choice(pWords).lower()
@@ -37,17 +35,20 @@ def Guess():
             break
     guessCount+=1
     #--Processing-The-Guess--#
+    print("\033[F",end="")
     listedGuess=[]
     for i in guess: listedGuess.append(i)
     for i in listedGuess:
         if i not in listedWord:
-            print(0,end="")
+            print(f"\033[91m{i}\033[0m",end="")
         elif i in listedWord and listedWord.index(i)==listedGuess.index(i):
-            print(1,end="")
+            print(f"\033[92m{i}\033[0m",end="")
         else:
-            print(2,end="")
+            print(f"\033[93m{i}\033[0m",end="")
     if guess==word:
           correct=True
     print()
 while guessCount<6 and correct==False:
     Guess()
+if guessCount==6:
+    print("The word was:",word)

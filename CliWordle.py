@@ -16,8 +16,8 @@ correct=False
 #--Clear-Screen--#
 os.system("clear")
 #--Pick-A-Word--#
-pWords=["green","books","orbit","maple","bacon","maths","angle"]
-word=random.choice(pWords).lower()
+words=open("words.txt","rt").read().splitlines()
+word=random.choice(words).lower()
 listedWord=[]
 for i in word:  listedWord.append(i)
 #--Guess-Function--#

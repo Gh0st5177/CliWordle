@@ -9,7 +9,6 @@ os.system("clear")
 #--Pick-A-Word--#
 words=open("words.txt","rt").read().splitlines()
 word=random.choice(words).lower()
-word="annex"
 #--Guess-Function--#
 def Guess():
     global guessCount

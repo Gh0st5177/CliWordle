@@ -13,11 +13,12 @@ word=random.choice(words).lower()
 def Guess():
     global guessCount
     global word
+    global words
     global correct
     #--Creating-The-Guess--#
     while True:
         guess=input()
-        if len(guess)!=5:
+        if len(guess)!=5 or guess not in words:
             print("\033[F\033[2K",end="")
         else:
             break

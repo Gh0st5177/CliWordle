@@ -733,6 +733,7 @@ dined
 diner
 dines
 dingy
+diode
 dirge
 dirty
 discs
